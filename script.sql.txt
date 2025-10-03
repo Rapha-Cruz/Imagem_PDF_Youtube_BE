@@ -1,0 +1,24 @@
+-- Cria a tabela 'produtos' no schema público
+CREATE TABLE produtos (
+    -- Chave primária auto-incrementável
+    id SERIAL PRIMARY KEY,    
+    -- Nome do produto. Não pode ser nulo.
+    nome VARCHAR(60) NOT NULL,    
+    -- URL pública da imagem do produto.
+    imagem_url VARCHAR(512),    
+    -- URL pública do documento PDF do produto.
+    pdf_url VARCHAR(512),    
+    -- Link do vídeo do YouTube (formatado como 'embed').
+    youtube_link VARCHAR(512),
+    -- Timestamp da criação (opcional, mas recomendado)
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Exemplo de inserção para fins de teste
+INSERT INTO produtos (nome, imagem_url, pdf_url, youtube_link) VALUES
+(
+    'Produto Inicial de Exemplo',
+    '[https://placehold.co/400x200/cccccc/333333?text=URL+Imagem+Exemplo](https://placehold.co/400x200/cccccc/333333?text=URL+Imagem+Exemplo)',
+    '[https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf](https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf)',
+    '[https://www.youtube.com/embed/dQw4w9WgXcQ](https://www.youtube.com/embed/dQw4w9WgXcQ)'
+);

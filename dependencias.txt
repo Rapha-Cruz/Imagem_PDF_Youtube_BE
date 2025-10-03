@@ -1,0 +1,6 @@
+- cria o package.json
+npm init -y
+
+- instala as dependencias
+npm install express cors body-parser pg
+npm install @vercel/blob
